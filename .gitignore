@@ -26,3 +26,6 @@ x86/
 *.temp
 *.DS_Store
 Thumbs.db
+
+# Include raylib.lib explicitly
+!packages/raylib.5.0.0/build/native/lib/x64/raylib.lib
