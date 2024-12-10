@@ -1,0 +1,28 @@
+# Ignore build directories
+Debug/
+Release/
+x64/
+x86/
+
+# Ignore build artifacts
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+*.suo
+*.ipch
+*.cache
+
+# Visual Studio specific
+*.user
+*.vcxproj.user
+*.VC.db
+.vs/
+
+# Temporary and system files
+*.log
+*.tmp
+*.temp
+*.DS_Store
+Thumbs.db
