@@ -10,12 +10,9 @@
 #include <glm/glm.hpp>
 #include "Agent.h"
 #include "Behaviour.h"
-#include "GoToPointBehaviour.h"
 #include "WanderBehaviour.h"
 #include "FollowBehaviour.h"
-#include "SelectorBehaviour.h"
 #include "FiniteStateMachine.h"
-#include "DistanceCondition.h"
 #include "State.h"
 #include <cstdlib>
 #include <ctime>
@@ -48,8 +45,8 @@ int main(int argc, char* argv[])
     nodeMap.Initialise(asciiMap, 50);
 
     // Create first agent with GoToPointBehaviour (player controlled)
-    Agent agent1(&nodeMap, new GoToPointBehaviour());
-    agent1.SetSpeed(64);
+    Agent agent1(&nodeMap, nullptr);
+    agent1.SetSpeed(128);
     agent1.SetColor({ 0, 255, 0, 255 });  // Set to green
 
     // Create second agent with WanderBehaviour (random movement)
@@ -82,6 +79,36 @@ int main(int argc, char* argv[])
 
     while (!WindowShouldClose())
     {
+        if (IsMouseButtonPressed(0))  // Left click to set start node
+        {
+            Vector2 mousePos = GetMousePosition();
+            AIForGames::Node* startNode = nodeMap.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
+
+            if (startNode) {
+                agent1.SetNode(startNode); // Update agent1's starting node
+                std::cout << "Agent start set at: (" << startNode->position.x << ", " << startNode->position.y << ")" << std::endl;
+            }
+            else {
+                std::cerr << "Failed to find a valid start node." << std::endl;
+            }
+        }
+
+        if (IsMouseButtonPressed(1))  // Right click to set goal node
+        {
+            Vector2 mousePos = GetMousePosition();
+            AIForGames::Node* endNode = nodeMap.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
+
+            if (endNode) {
+                agent1.GoTo(endNode->position); // Move agent1 to the target node
+                std::cout << "Agent moving to: (" << endNode->position.x << ", " << endNode->position.y << ")" << std::endl;
+            }
+            else {
+                std::cerr << "Failed to find a valid end node." << std::endl;
+            }
+        }
+
+
+
         float deltaTime = GetFrameTime();
 
         BeginDrawing();

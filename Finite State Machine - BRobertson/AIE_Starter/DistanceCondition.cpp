@@ -1,4 +1,4 @@
-#include "DistanceCondition.h"
+#include "state.h"
 
 bool DistanceCondition::IsTrue(Agent* agent)
 {
