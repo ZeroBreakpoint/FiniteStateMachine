@@ -86,7 +86,6 @@ int main(int argc, char* argv[])
 
             if (startNode) {
                 agent1.SetNode(startNode); // Update agent1's starting node
-                std::cout << "Agent start set at: (" << startNode->position.x << ", " << startNode->position.y << ")" << std::endl;
             }
             else {
                 std::cerr << "Failed to find a valid start node." << std::endl;
@@ -100,7 +99,6 @@ int main(int argc, char* argv[])
 
             if (endNode) {
                 agent1.GoTo(endNode->position); // Move agent1 to the target node
-                std::cout << "Agent moving to: (" << endNode->position.x << ", " << endNode->position.y << ")" << std::endl;
             }
             else {
                 std::cerr << "Failed to find a valid end node." << std::endl;
