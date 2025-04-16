@@ -1,6 +1,6 @@
 # FiniteStateMachine (C++ with Raylib)
 
-This project demonstrates a Non-Player Character (NPC) using a Finite State Machine (FSM) to switch between two AI behaviors: **Wander** and **Follow**.  The demo is written in C++ using Raylib for rendering and integrates Dijkstra’s algorithm for pathfinding between nodes on a grid.
+This project demonstrates a Non-Player Character (NPC) using a Finite State Machine (FSM) to switch between two AI behaviors: **Wander** and **Follow**.  The demo is written in C++ using Raylib for rendering and integrates Dijkstra’s algorithm ('DijkstrasPathfinding' project) for pathfinding between nodes on a grid.
 
 ---
 
