@@ -31,5 +31,5 @@ This project demonstrates a Non-Player Character (NPC) using a Finite State Mach
 | Input        | Action                                   |
 |--------------|------------------------------------------|
 | Left Click   | Set the **start node** for player agent  |
-| Right Click  | Set the **goal node** for player agent   |
+| Right Click  | Set the **end node** for player agent   |
 | ESC          | Exit the program                         |
