@@ -24,9 +24,9 @@ int main(int argc, char* argv[])
     int screenWidth = 800;
     int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "Finite State Machine - Assessment 3 - Bradley Robertson");
+    InitWindow(screenWidth, screenHeight, "Finite State Machine - Bradley Robertson");
 
-    SetTargetFPS(60);
+    SetTargetFPS(120);
     // Seed the random number generator
     std::srand(static_cast<unsigned int>(std::time(0)));
 

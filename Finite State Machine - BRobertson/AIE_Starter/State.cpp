@@ -1,7 +1,5 @@
 #include "State.h"
 
-#include "State.h"
-
 State::~State()
 {
     // Clean up the behaviours assigned to this state
